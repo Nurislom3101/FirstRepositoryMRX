@@ -3,7 +3,9 @@ package com.company.Magazine.Marketplace.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -44,5 +46,30 @@ public class Product {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @Column(name = "basket_id")
+    private Integer basket_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "basket_id", insertable = false, updatable = false)
+    private Basket baskets;
+
+    @Column(name = "category_id")
+    private Integer category_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
+    private Category categories;
+
+    @Column(name = "foreign_id")
+    private Integer foreign_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "foreign_id", insertable = false, updatable = false)
+    private Foreign foreign;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id",referencedColumnName = "image_id", insertable = false, updatable = false)
+    private Image image;
 
 }

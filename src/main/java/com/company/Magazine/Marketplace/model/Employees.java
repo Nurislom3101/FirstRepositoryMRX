@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -26,4 +27,7 @@ public class Employees {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @OneToMany(mappedBy = "employees_id", cascade = CascadeType.ALL)
+    private Set<User> users;
 }

@@ -68,4 +68,25 @@ public class User {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @Column(name = "loaner_id")
+    private Integer loaner_id;
+
+    @OneToOne(mappedBy = "user")
+    private Loaner loaner;
+
+    @Column(name = "employees_id")
+    private Integer employees_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employees_id", insertable = false, updatable = false)
+    private Employees employees;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id",referencedColumnName = "image_id",insertable = false, updatable = false)
+    private Image image;
+
+
+
+
 }

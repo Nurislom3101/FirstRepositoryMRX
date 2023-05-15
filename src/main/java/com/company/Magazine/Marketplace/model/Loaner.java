@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -33,4 +34,15 @@ public class Loaner {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private User user;
+
+    @Column(name = "basket_id")
+    private Integer basket_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "basket_id", insertable = false, updatable = false)
+    private Basket basket;
 }

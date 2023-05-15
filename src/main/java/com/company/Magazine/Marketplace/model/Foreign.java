@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -16,12 +17,10 @@ public class Foreign {
 
     private Integer foreign_id;
 
-    private int product_id;
-
     @Column(name = "foreign_company_name")
     private String foreign_company_name;
 
-    @Column(name = "foreign_fullName")
+    @Column(name = "foreign_full_name")
     private String foreign_fullName;
 
     @Column(name = "foreign_first_phone_number")
@@ -41,5 +40,8 @@ public class Foreign {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @OneToMany(mappedBy = "product_id", cascade = CascadeType.ALL)
+    private Set<Product> product;
 
 }

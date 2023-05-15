@@ -36,4 +36,19 @@ public class Image {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+
+
+    @Column(name = "product_id")
+    private Integer product_id;
+
+    @OneToOne(mappedBy = "image")
+    private Product product;
+
+
+    @Column(name = "user_id")
+    private Integer user_id;
+
+    @OneToOne(mappedBy = "image")
+    private User user;
 }

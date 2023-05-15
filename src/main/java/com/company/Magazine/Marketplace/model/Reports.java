@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
-
 @Getter
 @Setter
 @Entity
@@ -20,7 +19,7 @@ public class Reports {
     private int category_id;
 
     @Column(name = "prod_name")
-    private String prod_name;
+    private String prodName;
 
     @Column(name = "prod_present")
     private Double prod_present;
@@ -33,4 +32,5 @@ public class Reports {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
 }

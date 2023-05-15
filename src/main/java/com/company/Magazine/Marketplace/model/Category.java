@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,4 +31,11 @@ public class Category {
 
     @Column(name = "deleted_at")
     private Timestamp deleted_at;
+
+    @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
+    private Set<Product> product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reports_id", insertable = false, updatable = false)
+    private Foreign foreign;
 }
