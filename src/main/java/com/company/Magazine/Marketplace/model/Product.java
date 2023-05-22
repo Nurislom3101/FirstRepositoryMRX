@@ -70,7 +70,7 @@ public class Product {
     private Foreign foreign;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id",referencedColumnName = "image_id", insertable = false, updatable = false)
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
     private Image image;
 
 }

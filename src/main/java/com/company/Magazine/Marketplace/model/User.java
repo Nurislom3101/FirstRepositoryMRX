@@ -83,8 +83,7 @@ public class User {
     @JoinColumn(name = "employees_id", insertable = false, updatable = false)
     private Employees employees;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id",referencedColumnName = "image_id",insertable = false, updatable = false)
+    @OneToOne(mappedBy = "user")
     private Image image;
 
 

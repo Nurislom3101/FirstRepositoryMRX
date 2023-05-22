@@ -36,7 +36,10 @@ public class Category {
     @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
     private Set<Product> product;
 
+    @Column(name = "reports_id")
+    private Integer reports_id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reports_id", insertable = false, updatable = false)
-    private Foreign foreign;
+    private Reports reports;
 }

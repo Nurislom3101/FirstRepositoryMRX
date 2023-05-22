@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Set;
+
 @Getter
 @Setter
 @Entity
@@ -33,5 +35,8 @@ public class Reports {
 
     @Column(name = "deleted_at")
     private Timestamp deletedAt;
+
+    @OneToMany(mappedBy = "categoryId", cascade = CascadeType.ALL)
+    private Set<Category> category;
 
 }

@@ -50,6 +50,7 @@ public class Image {
     @Column(name = "user_id")
     private Integer user_id;
 
-    @OneToOne(mappedBy = "image")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
 }
