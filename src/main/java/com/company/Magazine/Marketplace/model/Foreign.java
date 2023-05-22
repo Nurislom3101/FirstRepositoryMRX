@@ -15,7 +15,8 @@ public class Foreign {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer foreign_id;
+    @Column(name = "foreign_id")
+    private Integer foreignId;
 
     @Column(name = "foreign_company_name")
     private String foreign_company_name;
@@ -39,9 +40,9 @@ public class Foreign {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
-    @OneToMany(mappedBy = "product_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "productId", cascade = CascadeType.ALL)
     private Set<Product> product;
 
 }

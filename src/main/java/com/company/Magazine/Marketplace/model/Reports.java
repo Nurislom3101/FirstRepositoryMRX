@@ -14,7 +14,8 @@ public class Reports {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer reports_id;
+    @Column(name = "reports_id")
+    private Integer reportsId;
 
     private int category_id;
 
@@ -31,6 +32,6 @@ public class Reports {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
 }

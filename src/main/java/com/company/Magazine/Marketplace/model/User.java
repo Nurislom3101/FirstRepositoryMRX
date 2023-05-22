@@ -14,7 +14,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer user_id;
+    @Column(name = "user_id")
+    private Integer userId;
 
     private int loaners_id;
 
@@ -67,7 +68,7 @@ public class User {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
     @Column(name = "loaner_id")
     private Integer loaner_id;

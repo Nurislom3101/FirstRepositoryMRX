@@ -14,7 +14,8 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer image_id;
+    @Column(name = "image_id")
+    private Integer imageId;
 
     @Column(name = "image_path")
     private String image_path;
@@ -35,7 +36,7 @@ public class Image {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
 
 

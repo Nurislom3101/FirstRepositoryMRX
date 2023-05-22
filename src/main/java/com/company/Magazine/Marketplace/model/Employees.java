@@ -15,7 +15,8 @@ public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer employees_id;
+    @Column(name = "employees_id")
+    private Integer employeesId;
 
     private int user_id;
 
@@ -26,7 +27,7 @@ public class Employees {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
     @OneToMany(mappedBy = "employees_id", cascade = CascadeType.ALL)
     private Set<User> users;

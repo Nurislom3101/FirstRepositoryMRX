@@ -15,7 +15,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer product_id;
+    @Column(name = "product_id")
+    private Integer productId;
 
     @Column(name = "prod_name")
     private String prod_name;
@@ -45,7 +46,7 @@ public class Product {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
     @Column(name = "basket_id")
     private Integer basket_id;

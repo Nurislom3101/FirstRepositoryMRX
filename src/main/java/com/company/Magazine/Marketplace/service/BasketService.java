@@ -9,15 +9,15 @@ public class BasketService {
         return null;
     }
 
-    public ResponseDto<BasketDto> get(Integer basketID) {
+    public ResponseDto<BasketDto> get(Integer id) {
         return null;
     }
 
-    public ResponseDto<BasketDto> update(BasketDto dto, Integer basketId) {
+    public ResponseDto<BasketDto> update(BasketDto dto, Integer id) {
         return null;
     }
 
-    public ResponseDto<BasketDto> delete(Integer basketId) {
+    public ResponseDto<BasketDto> delete(Integer id) {
         return null;
     }
 }

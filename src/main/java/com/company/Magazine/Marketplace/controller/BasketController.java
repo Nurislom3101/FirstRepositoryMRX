@@ -19,17 +19,17 @@ public class BasketController {
     }
 
     @GetMapping(value = ("/get/{id}"))
-    public ResponseDto<BasketDto> get(@PathVariable("id") Integer basketID) {
-        return basketService.get(basketID);
+    public ResponseDto<BasketDto> get(@PathVariable("id") Integer id) {
+        return basketService.get(id);
     }
 
     @PutMapping(value = ("/update/{id}"))
-    public ResponseDto<BasketDto> update(@RequestBody BasketDto dto, @PathVariable("id") Integer basketId) {
-        return basketService.update(dto, basketId);
+    public ResponseDto<BasketDto> update(@RequestBody BasketDto dto, @PathVariable("id") Integer id) {
+        return basketService.update(dto, id);
     }
 
     @DeleteMapping(value = ("/delete/{id}"))
-    public ResponseDto<BasketDto> delete(@PathVariable("id") Integer basketId) {
-        return basketService.delete(basketId);
+    public ResponseDto<BasketDto> delete(@PathVariable("id") Integer id) {
+        return basketService.delete(id);
     }
 }

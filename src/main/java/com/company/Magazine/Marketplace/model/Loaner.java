@@ -16,7 +16,8 @@ public class Loaner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer loaner_id;
+    @Column(name = "loaner_id")
+    private Integer loanerId;
 
     private int basked_id;
 
@@ -33,7 +34,7 @@ public class Loaner {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", insertable = false, updatable = false)

@@ -16,7 +16,8 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer category_id;
+    @Column(name = "category_id")
+    private Integer categoryId;
 
     private int product_id;
 
@@ -30,7 +31,7 @@ public class Category {
     private Timestamp updated_at;
 
     @Column(name = "deleted_at")
-    private Timestamp deleted_at;
+    private Timestamp deletedAt;
 
     @OneToMany(mappedBy = "category_id", cascade = CascadeType.ALL)
     private Set<Product> product;
