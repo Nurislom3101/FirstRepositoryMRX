@@ -9,9 +9,9 @@ import java.sql.Timestamp;
 @Setter
 public class EmployeesDto {
 
-    private Integer employees_id;
+    private Integer employeesId;
     private int user_id;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

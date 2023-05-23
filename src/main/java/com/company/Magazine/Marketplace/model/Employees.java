@@ -15,16 +15,15 @@ public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "employees_id")
     private Integer employeesId;
 
     private int user_id;
 
     @Column(name = "created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name = "updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name = "deleted_at")
     private Timestamp deletedAt;

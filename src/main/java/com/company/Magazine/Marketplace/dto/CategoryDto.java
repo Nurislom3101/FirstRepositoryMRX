@@ -9,10 +9,10 @@ import java.sql.Timestamp;
 @Setter
 public class CategoryDto {
 
-    private Integer category_id;
+    private Integer categoryId;
     private int product_id;
     private String category_name;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

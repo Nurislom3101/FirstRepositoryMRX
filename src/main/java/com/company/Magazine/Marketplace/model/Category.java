@@ -25,10 +25,10 @@ public class Category {
     private String category_name;
 
     @Column(name = "created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name = "updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name = "deleted_at")
     private Timestamp deletedAt;
