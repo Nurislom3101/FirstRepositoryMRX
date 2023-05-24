@@ -56,6 +56,9 @@ public class LoanerService {
                     .build();
         }
         Loaner loaner = loanerMapper.toEntity(dto);
+        loaner.setLoanerId(optional.get().getLoanerId());
+        loaner.setCreatedAt(optional.get().getCreatedAt());
+        loaner.setDeletedAt(optional.get().getDeletedAt());
         loaner.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         loanerRepository.save(loaner);
         return ResponseDto.<LoanerDto>builder()

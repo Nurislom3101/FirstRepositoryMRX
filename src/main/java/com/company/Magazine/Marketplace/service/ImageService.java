@@ -56,6 +56,9 @@ public class ImageService {
                     .build();
         }
         Image image =imageMapper.toEntity(dto);
+        image.setImageId(optional.get().getImageId());
+        image.setCreatedAt(optional.get().getCreatedAt());
+        image.setDeletedAt(optional.get().getDeletedAt());
         image.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         imageRepository.save(image);
         return ResponseDto.<ImageDto>builder()

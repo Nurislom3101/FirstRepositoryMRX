@@ -57,6 +57,9 @@ public class CategoryService {
                     .build();
         }
         Category category = categoryMapper.toEntity(dto);
+        category.setCategoryId(optional.get().getCategoryId());
+        category.setCreatedAt(optional.get().getCreatedAt());
+        category.setDeletedAt(optional.get().getDeletedAt());
         category.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         categoryRepository.save(category);
         return ResponseDto.<CategoryDto>builder()

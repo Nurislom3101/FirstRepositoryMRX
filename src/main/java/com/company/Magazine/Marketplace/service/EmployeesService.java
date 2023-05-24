@@ -55,6 +55,9 @@ public class EmployeesService {
                     .build();
         }
         Employees employees = employeesMapper.toEntity(dto);
+        employees.setEmployeesId(optional.get().getEmployeesId());
+        employees.setCreatedAt(optional.get().getCreatedAt());
+        employees.setDeletedAt(optional.get().getDeletedAt());
         employees.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         employeesRepository.save(employees);
         return ResponseDto.<EmployeesDto>builder()

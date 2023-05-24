@@ -56,6 +56,9 @@ public class ReportsService {
                     .build();
         }
         Reports reports = reportsMapper.toEntity(dto);
+        reports.setReportsId(optional.get().getReportsId());
+        reports.setCreatedAt(optional.get().getCreatedAt());
+        reports.setDeletedAt(optional.get().getDeletedAt());
         reports.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         reportsRepository.save(reports);
         return ResponseDto.<ReportsDto>builder()

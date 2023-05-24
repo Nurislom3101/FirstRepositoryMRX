@@ -57,6 +57,9 @@ public class ProductService {
                     .build();
         }
         Product product = productMapper.toEntity(dto);
+        product.setProductId(optional.get().getProductId());
+        product.setCreatedAt(optional.get().getCreatedAt());
+        product.setDeletedAt(optional.get().getDeletedAt());
         product.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         productRepository.save(product);
         return ResponseDto.<ProductDto>builder()

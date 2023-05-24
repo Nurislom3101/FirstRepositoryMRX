@@ -57,6 +57,9 @@ public class UserService {
                     .build();
         }
         User user = userMapper.toEntity(dto);
+        user.setUserId(optional.get().getUserId());
+        user.setCreatedAt(optional.get().getCreatedAt());
+        user.setDeletedAt(optional.get().getDeletedAt());
         user.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         userRepository.save(user);
         return ResponseDto.<UserDto>builder()

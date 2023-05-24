@@ -58,6 +58,10 @@ public class BasketService {
                     .build();
         }
        Basket basket = basketMapper.toEntity(dto);
+        basket.setBasketId(optional.get().getBasketId());
+        basket.setCreatedAt(optional.get().getCreatedAt());
+        basket.setDeletedAt(optional.get().getDeletedAt());
+        basket.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         basketRepository.save(basket);
         return ResponseDto.<BasketDto>builder()
                 .success(true)

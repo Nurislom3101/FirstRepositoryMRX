@@ -57,6 +57,9 @@ public class ForeignService {
                     .build();
         }
         Foreign foreign = foreignMapper.toEntity(dto);
+        foreign.setForeignId(optional.get().getForeignId());
+        foreign.setCreatedAt(optional.get().getCreatedAt());
+        foreign.setDeletedAt(optional.get().getDeletedAt());
         foreign.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         foreignRepository.save(foreign);
         return ResponseDto.<ForeignDto>builder()
