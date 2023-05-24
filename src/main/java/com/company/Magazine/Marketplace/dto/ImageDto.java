@@ -9,12 +9,12 @@ import java.sql.Timestamp;
 @Setter
 public class ImageDto {
 
-    private Integer image_id;
+    private Integer imageId;
     private String image_path;
     private String image_type;
     private int image_size;
     private String image_token;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

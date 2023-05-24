@@ -9,11 +9,11 @@ import java.sql.Timestamp;
 @Setter
 public class LoanerDto {
 
-    private Integer loaner_id;
+    private Integer loanerId;
     private int basked_id;
     private Double total_price;
     private Boolean loaner_status;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

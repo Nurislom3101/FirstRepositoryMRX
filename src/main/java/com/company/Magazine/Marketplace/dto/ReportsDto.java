@@ -9,11 +9,11 @@ import java.sql.Timestamp;
 @Setter
 public class ReportsDto{
 
-    private Integer reports_id;
+    private Integer reportsId;
     private int category_id;
     private String prodName;
     private Double prod_present;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

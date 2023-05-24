@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Setter
 public class UserDto {
 
-    private Integer user_id;
+    private Integer userId;
     private int loaners_id;
     private int image_id;
     private String user_first_name;
@@ -25,7 +25,7 @@ public class UserDto {
     private Timestamp user_birthdate;
     private Timestamp user_working_time;
     private Timestamp user_working_days;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }

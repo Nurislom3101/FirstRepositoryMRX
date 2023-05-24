@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 @Setter
 public class ProductDto {
 
-    private Integer product_id;
+    private Integer productId;
     private String prod_name;
     private Double received_price;
     private Double selling_price;
@@ -17,7 +17,7 @@ public class ProductDto {
     private Double prod_amount;
     private int image_id;
     private Timestamp expired_at;
-    private Timestamp created_at;
-    private Timestamp updated_at;
-    private Timestamp deleted_at;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 }
